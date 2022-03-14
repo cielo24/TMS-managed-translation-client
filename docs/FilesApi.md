@@ -1,20 +1,21 @@
 # swagger_client.FilesApi
 
-All URIs are relative to *https://languagecloud.sdl.com/*
+All URIs are relative to *https://languagecloud.sdl.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**files_add_reference_file**](FilesApi.md#files_add_reference_file) | **POST** /tm4lc/api/v1/files/{projectId}/reference | Add Reference File
 [**files_delete**](FilesApi.md#files_delete) | **DELETE** /tm4lc/api/v1/files/{fileId} | Delete
-[**files_get_files**](FilesApi.md#files_get_files) | **GET** /tm4lc/api/v1/files/{projectOptionsId} | Get Files
+[**files_get_files**](FilesApi.md#files_get_files) | **GET** /tm4lc/api/v1/files/{fileId} | Get Files
 [**files_get_studio_packages**](FilesApi.md#files_get_studio_packages) | **POST** /tm4lc/api/v1/files/studiopackage/download | Get Studio Packages
 [**files_get_studio_packages_by_files**](FilesApi.md#files_get_studio_packages_by_files) | **POST** /tm4lc/api/v1/files/studiopackage/downloadbyfile | Get Studio Packages By Files
 [**files_get_translated_file**](FilesApi.md#files_get_translated_file) | **GET** /tm4lc/api/v1/files/{projectId}/{fileId} | Get Translated File
 [**files_set_studio_package**](FilesApi.md#files_set_studio_package) | **POST** /tm4lc/api/v1/files/studiopackage/upload | Set Studio Package
-[**files_upload**](FilesApi.md#files_upload) | **POST** /tm4lc/api/v1/files/{projectOptionsId} | Upload
+[**files_upload**](FilesApi.md#files_upload) | **POST** /tm4lc/api/v1/files/{fileId} | Upload
+
 
 # **files_add_reference_file**
-> list[LcFile] files_add_reference_file(file, project_id)
+> list[LcFile] files_add_reference_file(project_id, file)
 
 Add Reference File
 
@@ -34,12 +35,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
-file = 'file_example' # str | 
 project_id = 'project_id_example' # str | The project identifier.
+file = '/path/to/file.txt' # file | 
 
 try:
     # Add Reference File
-    api_response = api_instance.files_add_reference_file(file, project_id)
+    api_response = api_instance.files_add_reference_file(project_id, file)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->files_add_reference_file: %s\n" % e)
@@ -49,8 +50,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **str**|  | 
  **project_id** | **str**| The project identifier. | 
+ **file** | **file**|  | 
 
 ### Return type
 
@@ -114,12 +115,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **files_get_files**
-> list[LcFile] files_get_files(project_options_id)
+> list[LcFile] files_get_files(file_id)
 
 Get Files
 
@@ -139,11 +140,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
-project_options_id = 'project_options_id_example' # str | The project options identifier - if specified, the returned list of files will be             evaluated for suitability against the specified project creation options.
+file_id = 'file_id_example' # str | The project options identifier - if specified, the returned list of files will be             evaluated for suitability against the specified project creation options.
 
 try:
     # Get Files
-    api_response = api_instance.files_get_files(project_options_id)
+    api_response = api_instance.files_get_files(file_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->files_get_files: %s\n" % e)
@@ -153,7 +154,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_options_id** | **str**| The project options identifier - if specified, the returned list of files will be             evaluated for suitability against the specified project creation options. | 
+ **file_id** | **str**| The project options identifier - if specified, the returned list of files will be             evaluated for suitability against the specified project creation options. | 
 
 ### Return type
 
@@ -171,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **files_get_studio_packages**
-> str files_get_studio_packages(body)
+> file files_get_studio_packages(project_ids)
 
 Get Studio Packages
 
@@ -191,11 +192,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
-body = ['body_example'] # list[str] | The project identifier as supplied by PortalProjectStatus.Id.
+project_ids = [swagger_client.list[str]()] # list[str] | The project identifier as supplied by PortalProjectStatus.Id.
 
 try:
     # Get Studio Packages
-    api_response = api_instance.files_get_studio_packages(body)
+    api_response = api_instance.files_get_studio_packages(project_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->files_get_studio_packages: %s\n" % e)
@@ -205,11 +206,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[str]**](str.md)| The project identifier as supplied by PortalProjectStatus.Id. | 
+ **project_ids** | **list[str]**| The project identifier as supplied by PortalProjectStatus.Id. | 
 
 ### Return type
 
-**str**
+[**file**](file.md)
 
 ### Authorization
 
@@ -223,7 +224,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **files_get_studio_packages_by_files**
-> str files_get_studio_packages_by_files(body)
+> file files_get_studio_packages_by_files(file_ids)
 
 Get Studio Packages By Files
 
@@ -243,11 +244,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
-body = ['body_example'] # list[str] | A list of file identifiers
+file_ids = [swagger_client.list[str]()] # list[str] | A list of file identifiers
 
 try:
     # Get Studio Packages By Files
-    api_response = api_instance.files_get_studio_packages_by_files(body)
+    api_response = api_instance.files_get_studio_packages_by_files(file_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->files_get_studio_packages_by_files: %s\n" % e)
@@ -257,11 +258,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[str]**](str.md)| A list of file identifiers | 
+ **file_ids** | **list[str]**| A list of file identifiers | 
 
 ### Return type
 
-**str**
+[**file**](file.md)
 
 ### Authorization
 
@@ -275,7 +276,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **files_get_translated_file**
-> str files_get_translated_file(project_id, file_id)
+> file files_get_translated_file(project_id, file_id)
 
 Get Translated File
 
@@ -315,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+[**file**](file.md)
 
 ### Authorization
 
@@ -349,7 +350,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
-file = 'file_example' # str | 
+file = '/path/to/file.txt' # file | 
 
 try:
     # Set Studio Package
@@ -362,7 +363,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **str**|  | 
+ **file** | **file**|  | 
 
 ### Return type
 
@@ -375,12 +376,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **files_upload**
-> list[LcFile] files_upload(file, project_options_id)
+> list[LcFile] files_upload(file_id, file)
 
 Upload
 
@@ -400,12 +401,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
-file = 'file_example' # str | 
-project_options_id = 'project_options_id_example' # str | The project options identifier against which the uploaded file will be evaluated.
+file_id = 'file_id_example' # str | The project options identifier against which the uploaded file will be evaluated.
+file = '/path/to/file.txt' # file | 
 
 try:
     # Upload
-    api_response = api_instance.files_upload(file, project_options_id)
+    api_response = api_instance.files_upload(file_id, file)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->files_upload: %s\n" % e)
@@ -415,8 +416,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **str**|  | 
- **project_options_id** | **str**| The project options identifier against which the uploaded file will be evaluated. | 
+ **file_id** | **str**| The project options identifier against which the uploaded file will be evaluated. | 
+ **file** | **file**|  | 
 
 ### Return type
 

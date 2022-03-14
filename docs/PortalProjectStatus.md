@@ -4,14 +4,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authorized_date** | **datetime** | Gets the date and time, in UTC, that the project was approved. | [optional] 
-**can_be_cancelled** | **bool** | Indicates whether the project can be cancelled, based upon its current status and the current user&#x27;s permissions. | [optional] 
+**can_be_cancelled** | **bool** | Indicates whether the project can be cancelled, based upon its current status and the current user&#39;s permissions. | [optional] 
 **cost** | **float** | The total cost of the project. | [optional] 
 **cost_bands** | [**list[PortalCostBand]**](PortalCostBand.md) | The overall cost bands for the project, describing the word count and cost per word for each             TM match band. | [optional] 
 **cost_details** | [**list[PortalProjectCostDetail]**](PortalProjectCostDetail.md) | The project level costs | [optional] 
 **created_by_user_id** | **str** | The Managed Translation Id of the user who created the project. | [optional] 
 **created_by_user_name** | **str** | The display name or username of the user who created the project. | [optional] 
 **created_date** | **datetime** | The date and time, in UTC, the project was created. | [optional] 
-**currency_info** | [**PortalCurrency**](PortalCurrency.md) |  | [optional] 
+**currency_info** | [**PortalCurrency**](PortalCurrency.md) | The currency used for the costs associated with the project. | [optional] 
 **delivered_date** | **datetime** | The date and time, in UTC, the project was delivered and ready to download. | [optional] 
 **delivery_estimate** | **datetime** | Gets the estimated delivery date, calculated from the estimated Duration at the time the project was approved. | [optional] 
 **description** | **str** | The project description, provided during project creation. | [optional] 
@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **scope_option_id** | **str** | The unique identifier of the scope at which the project was created. A scope may have a different meaning             on different underlying platforms. In Translation Management System, a Scope corresponds to an Organization. | [optional] 
 **scope_option_name** | **str** | The name of the scope at which the project was created. A scope may have a different meaning             on different underlying platforms. In Translation Management System, a Scope corresponds to an Organization. | [optional] 
 **source_files** | **int** | The number of source files in the project, calculated from the LanguagePairDetails information. | [optional] 
-**source_langauge** | [**PortalLanguage**](PortalLanguage.md) |  | [optional] 
+**source_langauge** | [**PortalLanguage**](PortalLanguage.md) | The source language of the project. | [optional] 
 **source_words** | **int** | The total number of words in the source files associated with the project, calculated from the LanguagePairDetails information. | [optional] 
 **started_batches** | **int** | The number of started batches whitin the project. | [optional] 
 **status** | **str** | The status of the project. This value is a simplified, project level status, and does not mean that every             file within the project is at this status.0 &#x3D; Preparing, 1 &#x3D; ForApproval, 2 &#x3D; InProgress, 3 &#x3D; ForDownload, 4 &#x3D; Completed, 5 &#x3D; PartialDownload, 6 &#x3D; InReview, 7 &#x3D; Reviewed, 8 &#x3D; InSignOff, 9 &#x3D; SignedOff, 10 &#x3D; ForVendorSelection, 11 &#x3D; Cancelled, 12 &#x3D; New | [optional] 
@@ -60,4 +60,5 @@ Name | Type | Description | Notes
 **word_count** | **int** | The total word count of the project, considering all target language files. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

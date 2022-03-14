@@ -1,6 +1,6 @@
 # swagger_client.ProjectsApi
 
-All URIs are relative to *https://languagecloud.sdl.com/*
+All URIs are relative to *https://languagecloud.sdl.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,6 +31,7 @@ Method | HTTP request | Description
 [**projects_report_file_problem**](ProjectsApi.md#projects_report_file_problem) | **POST** /tm4lc/api/v1/projects/{projectId}/{fileId}/error | Report File Problem
 [**projects_set_project_templates**](ProjectsApi.md#projects_set_project_templates) | **POST** /tm4lc/api/v1/projects/templates | Set Project Templates
 [**projects_start_project**](ProjectsApi.md#projects_start_project) | **POST** /tm4lc/api/v1/projects/{projectId}/start | Start Project
+
 
 # **projects_approve**
 > projects_approve(project_id)
@@ -79,12 +80,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_assign_vendor**
-> projects_assign_vendor(body, project_id)
+> projects_assign_vendor(project_id, vendor_id)
 
 Assign Vendor
 
@@ -104,12 +105,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.ProjectsApi(swagger_client.ApiClient(configuration))
-body = 'body_example' # str | The vendor identifier. This value can be obtained from PortalVendor.Id.
 project_id = 'project_id_example' # str | The project identifier of the project to which the specified vendor should be assigned. This value can be obtained from PortalProjectStatus.Id.
+vendor_id = 'vendor_id_example' # str | The vendor identifier. This value can be obtained from PortalVendor.Id.
 
 try:
     # Assign Vendor
-    api_instance.projects_assign_vendor(body, project_id)
+    api_instance.projects_assign_vendor(project_id, vendor_id)
 except ApiException as e:
     print("Exception when calling ProjectsApi->projects_assign_vendor: %s\n" % e)
 ```
@@ -118,8 +119,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**str**](str.md)| The vendor identifier. This value can be obtained from PortalVendor.Id. | 
  **project_id** | **str**| The project identifier of the project to which the specified vendor should be assigned. This value can be obtained from PortalProjectStatus.Id. | 
+ **vendor_id** | **str**| The vendor identifier. This value can be obtained from PortalVendor.Id. | 
 
 ### Return type
 
@@ -132,7 +133,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -183,7 +184,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -236,7 +237,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -288,7 +289,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_create**
-> PortalCreateProjectResponse projects_create(body)
+> PortalCreateProjectResponse projects_create(project_parameters)
 
 Create
 
@@ -308,11 +309,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.ProjectsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.PortalProjectParams() # PortalProjectParams | The project creation parameters.
+project_parameters = swagger_client.PortalProjectParams() # PortalProjectParams | The project creation parameters.
 
 try:
     # Create
-    api_response = api_instance.projects_create(body)
+    api_response = api_instance.projects_create(project_parameters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectsApi->projects_create: %s\n" % e)
@@ -322,7 +323,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PortalProjectParams**](PortalProjectParams.md)| The project creation parameters. | 
+ **project_parameters** | [**PortalProjectParams**](PortalProjectParams.md)| The project creation parameters. | 
 
 ### Return type
 
@@ -360,7 +361,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.ProjectsApi(swagger_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | The guid of the setting that will be deleted
+id = 'id_example' # str | The guid of the setting that will be deleted
 
 try:
     # Delete Project Template
@@ -391,7 +392,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_fetch_projects**
-> list[PortalProjectStatus] projects_fetch_projects(body)
+> list[PortalProjectStatus] projects_fetch_projects(projects)
 
 Fetch Projects
 
@@ -411,11 +412,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.ProjectsApi(swagger_client.ApiClient(configuration))
-body = ['body_example'] # list[str] | The projectIds of the projects to retrieve.
+projects = [swagger_client.list[str]()] # list[str] | The projectIds of the projects to retrieve.
 
 try:
     # Fetch Projects
-    api_response = api_instance.projects_fetch_projects(body)
+    api_response = api_instance.projects_fetch_projects(projects)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectsApi->projects_fetch_projects: %s\n" % e)
@@ -425,7 +426,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[str]**](str.md)| The projectIds of the projects to retrieve. | 
+ **projects** | **list[str]**| The projectIds of the projects to retrieve. | 
 
 ### Return type
 
@@ -615,7 +616,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_get_project_group_quote**
-> str projects_get_project_group_quote(project_group_id, format)
+> file projects_get_project_group_quote(project_group_id, format)
 
 Get Project Group Quote
 
@@ -655,7 +656,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+[**file**](file.md)
 
 ### Authorization
 
@@ -669,7 +670,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_get_project_quote**
-> str projects_get_project_quote(project_id, format)
+> file projects_get_project_quote(project_id, format)
 
 Get Project Quote
 
@@ -709,7 +710,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+[**file**](file.md)
 
 ### Authorization
 
@@ -801,7 +802,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.ProjectsApi(swagger_client.ApiClient(configuration))
-id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # str | Optional specifying the guid of the setting to be returned (optional)
+id = 'id_example' # str | Optional specifying the guid of the setting to be returned (optional)
 
 try:
     # Get Project Templates
@@ -832,7 +833,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_get_project_zip**
-> str projects_get_project_zip(project_id, types=types)
+> file projects_get_project_zip(project_id, types=types)
 
 Get Project Zip
 
@@ -872,7 +873,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+[**file**](file.md)
 
 ### Authorization
 
@@ -886,7 +887,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_get_project_zip_with_specific_files**
-> str projects_get_project_zip_with_specific_files(body, project_id, types=types)
+> file projects_get_project_zip_with_specific_files(project_id, download_files, types=types)
 
 Get Project Zip With Specific Files
 
@@ -906,13 +907,13 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.ProjectsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.DownloadFiles() # DownloadFiles | An object with string[] TargetFiles property
 project_id = 'project_id_example' # str | The project identifier.
+download_files = swagger_client.DownloadFiles() # DownloadFiles | An object with string[] TargetFiles property
 types = 'types_example' # str | The types to download. 1 = TargetFiles, 2 = SourceFiles, 4 = ReferenceFiles (optional)
 
 try:
     # Get Project Zip With Specific Files
-    api_response = api_instance.projects_get_project_zip_with_specific_files(body, project_id, types=types)
+    api_response = api_instance.projects_get_project_zip_with_specific_files(project_id, download_files, types=types)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectsApi->projects_get_project_zip_with_specific_files: %s\n" % e)
@@ -922,13 +923,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DownloadFiles**](DownloadFiles.md)| An object with string[] TargetFiles property | 
  **project_id** | **str**| The project identifier. | 
+ **download_files** | [**DownloadFiles**](DownloadFiles.md)| An object with string[] TargetFiles property | 
  **types** | **str**| The types to download. 1 &#x3D; TargetFiles, 2 &#x3D; SourceFiles, 4 &#x3D; ReferenceFiles | [optional] 
 
 ### Return type
 
-**str**
+[**file**](file.md)
 
 ### Authorization
 
@@ -1284,7 +1285,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_reject_file**
-> projects_reject_file(body, project_id, file_id)
+> projects_reject_file(project_id, file_id, reject_message)
 
 Reject File
 
@@ -1304,13 +1305,13 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.ProjectsApi(swagger_client.ApiClient(configuration))
-body = 'body_example' # str | The rejection message.
 project_id = 'project_id_example' # str | The project identifier.
 file_id = 'file_id_example' # str | The file identifier.
+reject_message = 'reject_message_example' # str | The rejection message.
 
 try:
     # Reject File
-    api_instance.projects_reject_file(body, project_id, file_id)
+    api_instance.projects_reject_file(project_id, file_id, reject_message)
 except ApiException as e:
     print("Exception when calling ProjectsApi->projects_reject_file: %s\n" % e)
 ```
@@ -1319,9 +1320,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**str**](str.md)| The rejection message. | 
  **project_id** | **str**| The project identifier. | 
  **file_id** | **str**| The file identifier. | 
+ **reject_message** | **str**| The rejection message. | 
 
 ### Return type
 
@@ -1334,12 +1335,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_report_file_problem**
-> projects_report_file_problem(body, project_id, file_id)
+> projects_report_file_problem(project_id, file_id, error_message)
 
 Report File Problem
 
@@ -1359,13 +1360,13 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.ProjectsApi(swagger_client.ApiClient(configuration))
-body = 'body_example' # str | The error message.
 project_id = 'project_id_example' # str | The project identifier.
 file_id = 'file_id_example' # str | The file identifier.
+error_message = 'error_message_example' # str | The error message.
 
 try:
     # Report File Problem
-    api_instance.projects_report_file_problem(body, project_id, file_id)
+    api_instance.projects_report_file_problem(project_id, file_id, error_message)
 except ApiException as e:
     print("Exception when calling ProjectsApi->projects_report_file_problem: %s\n" % e)
 ```
@@ -1374,9 +1375,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**str**](str.md)| The error message. | 
  **project_id** | **str**| The project identifier. | 
  **file_id** | **str**| The file identifier. | 
+ **error_message** | **str**| The error message. | 
 
 ### Return type
 
@@ -1389,12 +1390,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_set_project_templates**
-> projects_set_project_templates(body)
+> projects_set_project_templates(portal_user_project_template)
 
 Set Project Templates
 
@@ -1414,11 +1415,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.ProjectsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.PortalUserProjectTemplate() # PortalUserProjectTemplate | The project template settings
+portal_user_project_template = swagger_client.PortalUserProjectTemplate() # PortalUserProjectTemplate | The project template settings
 
 try:
     # Set Project Templates
-    api_instance.projects_set_project_templates(body)
+    api_instance.projects_set_project_templates(portal_user_project_template)
 except ApiException as e:
     print("Exception when calling ProjectsApi->projects_set_project_templates: %s\n" % e)
 ```
@@ -1427,7 +1428,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PortalUserProjectTemplate**](PortalUserProjectTemplate.md)| The project template settings | 
+ **portal_user_project_template** | [**PortalUserProjectTemplate**](PortalUserProjectTemplate.md)| The project template settings | 
 
 ### Return type
 

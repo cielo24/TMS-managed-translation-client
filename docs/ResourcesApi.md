@@ -1,12 +1,13 @@
 # swagger_client.ResourcesApi
 
-All URIs are relative to *https://languagecloud.sdl.com/*
+All URIs are relative to *https://languagecloud.sdl.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**resources_java_script_strings**](ResourcesApi.md#resources_java_script_strings) | **GET** /tm4lc/api/v1/resources/strings/{lang}/{version}/{userid} | Java Script Strings
 [**resources_ui_languages**](ResourcesApi.md#resources_ui_languages) | **GET** /tm4lc/api/v1/resources/uilanguages | Ui Languages
 [**resources_version**](ResourcesApi.md#resources_version) | **GET** /tm4lc/api/v1/resources/version | Version
+
 
 # **resources_java_script_strings**
 > dict(str, str) resources_java_script_strings(lang, version, userid)
