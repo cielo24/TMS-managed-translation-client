@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **annotated_file_id** | **str** | The unique identifier of the annotated source file if one exists. Used by the In-Context Review functionality if available. | [optional] 
 **annotated_file_stored_date** | **datetime** | The date the annotated source file was stored. | [optional] 
-**assignees** | [**PortalGroup**](PortalGroup.md) |  | [optional] 
+**assignees** | [**PortalGroup**](PortalGroup.md) | The group of users currently assigned to work on the file. | [optional] 
 **authorized_date** | **datetime** | The date the file was authorized. | [optional] 
 **can_be_cancelled** | **bool** | Indicates whether the file can be cancelled. | [optional] 
 **cost** | **float** | The total cost for translating the file. | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **locked_words** | **int** | The total number of words marked as locked during preparation. | [optional] 
 **name** | **str** | The name of the file, without any preceeding path information. | [optional] 
 **new_words** | **int** | The total number of words for the file receiving no match from the translation memory during preparation. | [optional] 
-**owner** | [**PortalOwner**](PortalOwner.md) |  | [optional] 
+**owner** | [**PortalOwner**](PortalOwner.md) | Gets or sets the owner | [optional] 
 **perfect_match_words** | **int** | The total number of words for the file receiving a pefect match from the translation memory during preparation. | [optional] 
 **portal_reviewers** | [**list[PortalReviewer]**](PortalReviewer.md) | Gets or sets the review information. | [optional] 
 **portal_signoffers** | [**list[PortalSignoffer]**](PortalSignoffer.md) | Gets or sets the signoff information. | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **status_detail** | **str** | Gets or sets the workflow status detail. | [optional] 
 **status_id** | **str** | Gets or sets the workflow stage status id. | [optional] 
 **status_type** | **str** | Gets or sets the workflow status type. | [optional] 
-**target_language** | [**PortalLanguage**](PortalLanguage.md) |  | [optional] 
+**target_language** | [**PortalLanguage**](PortalLanguage.md) | Gets or sets the target language of the file. | [optional] 
 **task_id** | **str** | Gets or sets the identifier. | [optional] 
 **tm_leverage** | **float** | Gets or sets the tm leverage. | [optional] 
 **tm_savings** | **float** | Gets or sets the tm savings. | [optional] 
@@ -39,4 +39,5 @@ Name | Type | Description | Notes
 **workflow_attributes** | [**list[PortalWorkflowAttribute]**](PortalWorkflowAttribute.md) | Gets or sets the workflow attributes. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

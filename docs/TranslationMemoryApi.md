@@ -1,6 +1,6 @@
 # swagger_client.TranslationMemoryApi
 
-All URIs are relative to *https://languagecloud.sdl.com/*
+All URIs are relative to *https://languagecloud.sdl.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**translation_memory_search_by_project_option**](TranslationMemoryApi.md#translation_memory_search_by_project_option) | **POST** /tm4lc/api/v1/tm/search/{projectOptionsId} | Search By Project Option
 [**translation_memory_update_by_file**](TranslationMemoryApi.md#translation_memory_update_by_file) | **POST** /tm4lc/api/v1/tm/update/file/{fileId} | Update By File
 [**translation_memory_update_by_project_option**](TranslationMemoryApi.md#translation_memory_update_by_project_option) | **POST** /tm4lc/api/v1/tm/update/{projectOptionsId} | Update By Project Option
+
 
 # **translation_memory_get_tm_search_options**
 > list[PortalTmOptions] translation_memory_get_tm_search_options(request_inherited_configs)
@@ -63,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **translation_memory_search_by_file**
-> list[TmSearchResult] translation_memory_search_by_file(body, file_id)
+> list[TmSearchResult] translation_memory_search_by_file(file_id, search_params)
 
 Search By File
 
@@ -83,12 +84,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.TranslationMemoryApi(swagger_client.ApiClient(configuration))
-body = swagger_client.TmSearchParams() # TmSearchParams | The search parameters.
 file_id = 'file_id_example' # str | The file identifier.
+search_params = swagger_client.TmSearchParams() # TmSearchParams | The search parameters.
 
 try:
     # Search By File
-    api_response = api_instance.translation_memory_search_by_file(body, file_id)
+    api_response = api_instance.translation_memory_search_by_file(file_id, search_params)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TranslationMemoryApi->translation_memory_search_by_file: %s\n" % e)
@@ -98,8 +99,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TmSearchParams**](TmSearchParams.md)| The search parameters. | 
  **file_id** | **str**| The file identifier. | 
+ **search_params** | [**TmSearchParams**](TmSearchParams.md)| The search parameters. | 
 
 ### Return type
 
@@ -117,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **translation_memory_search_by_project_option**
-> list[TmSearchResult] translation_memory_search_by_project_option(body, project_options_id)
+> list[TmSearchResult] translation_memory_search_by_project_option(project_options_id, search_params)
 
 Search By Project Option
 
@@ -137,12 +138,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.TranslationMemoryApi(swagger_client.ApiClient(configuration))
-body = swagger_client.TmSearchParams() # TmSearchParams | The search parameters.
 project_options_id = 'project_options_id_example' # str | The project options identifier.
+search_params = swagger_client.TmSearchParams() # TmSearchParams | The search parameters.
 
 try:
     # Search By Project Option
-    api_response = api_instance.translation_memory_search_by_project_option(body, project_options_id)
+    api_response = api_instance.translation_memory_search_by_project_option(project_options_id, search_params)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TranslationMemoryApi->translation_memory_search_by_project_option: %s\n" % e)
@@ -152,8 +153,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TmSearchParams**](TmSearchParams.md)| The search parameters. | 
  **project_options_id** | **str**| The project options identifier. | 
+ **search_params** | [**TmSearchParams**](TmSearchParams.md)| The search parameters. | 
 
 ### Return type
 
@@ -171,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **translation_memory_update_by_file**
-> bool translation_memory_update_by_file(body, file_id)
+> bool translation_memory_update_by_file(file_id, update_params)
 
 Update By File
 
@@ -191,12 +192,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.TranslationMemoryApi(swagger_client.ApiClient(configuration))
-body = swagger_client.TmUpdateParams() # TmUpdateParams | The update parameters.
 file_id = 'file_id_example' # str | The file identifier.
+update_params = swagger_client.TmUpdateParams() # TmUpdateParams | The update parameters.
 
 try:
     # Update By File
-    api_response = api_instance.translation_memory_update_by_file(body, file_id)
+    api_response = api_instance.translation_memory_update_by_file(file_id, update_params)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TranslationMemoryApi->translation_memory_update_by_file: %s\n" % e)
@@ -206,8 +207,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TmUpdateParams**](TmUpdateParams.md)| The update parameters. | 
  **file_id** | **str**| The file identifier. | 
+ **update_params** | [**TmUpdateParams**](TmUpdateParams.md)| The update parameters. | 
 
 ### Return type
 
@@ -225,7 +226,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **translation_memory_update_by_project_option**
-> bool translation_memory_update_by_project_option(body, project_options_id)
+> bool translation_memory_update_by_project_option(project_options_id, update_params)
 
 Update By Project Option
 
@@ -245,12 +246,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.TranslationMemoryApi(swagger_client.ApiClient(configuration))
-body = swagger_client.TmUpdateParams() # TmUpdateParams | The update parameters.
 project_options_id = 'project_options_id_example' # str | The project options identifier.
+update_params = swagger_client.TmUpdateParams() # TmUpdateParams | The update parameters.
 
 try:
     # Update By Project Option
-    api_response = api_instance.translation_memory_update_by_project_option(body, project_options_id)
+    api_response = api_instance.translation_memory_update_by_project_option(project_options_id, update_params)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TranslationMemoryApi->translation_memory_update_by_project_option: %s\n" % e)
@@ -260,8 +261,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TmUpdateParams**](TmUpdateParams.md)| The update parameters. | 
  **project_options_id** | **str**| The project options identifier. | 
+ **update_params** | [**TmUpdateParams**](TmUpdateParams.md)| The update parameters. | 
 
 ### Return type
 

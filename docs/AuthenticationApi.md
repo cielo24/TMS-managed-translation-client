@@ -1,11 +1,12 @@
 # swagger_client.AuthenticationApi
 
-All URIs are relative to *https://languagecloud.sdl.com/*
+All URIs are relative to *https://languagecloud.sdl.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**authentication_login**](AuthenticationApi.md#authentication_login) | **POST** /tm4lc/api/v1/auth/token | Login
 [**authentication_refresh_token**](AuthenticationApi.md#authentication_refresh_token) | **POST** /tm4lc/api/v1/auth/token/refresh | Refresh Token
+
 
 # **authentication_login**
 > TokenResponse authentication_login(grant_type, client_id, client_secret, username, password, implementation)
@@ -24,12 +25,12 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.AuthenticationApi()
-grant_type = 'grant_type_example' # str | 
-client_id = 'client_id_example' # str | 
-client_secret = 'client_secret_example' # str | 
-username = 'username_example' # str | 
-password = 'password_example' # str | 
-implementation = 'implementation_example' # str | 
+grant_type = 'grant_type_example' # str | The grant_type - must be \"password\".
+client_id = 'client_id_example' # str | The client_id assigned to your application.
+client_secret = 'client_secret_example' # str | The client_secret assigned to your application.
+username = 'username_example' # str | The username.
+password = 'password_example' # str | The password.
+implementation = 'implementation_example' # str | [Optional] The name of the backend implementation against which authentication should occur, if the supplied credentials are appropriate for use with more than one implementation. Unless told otherwise, you should probably omit this.
 
 try:
     # Login
@@ -43,12 +44,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **grant_type** | **str**|  | 
- **client_id** | **str**|  | 
- **client_secret** | **str**|  | 
- **username** | **str**|  | 
- **password** | **str**|  | 
- **implementation** | **str**|  | 
+ **grant_type** | **str**| The grant_type - must be \&quot;password\&quot;. | 
+ **client_id** | **str**| The client_id assigned to your application. | 
+ **client_secret** | **str**| The client_secret assigned to your application. | 
+ **username** | **str**| The username. | 
+ **password** | **str**| The password. | 
+ **implementation** | **str**| [Optional] The name of the backend implementation against which authentication should occur, if the supplied credentials are appropriate for use with more than one implementation. Unless told otherwise, you should probably omit this. | 
 
 ### Return type
 
@@ -82,10 +83,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.AuthenticationApi()
-grant_type = 'grant_type_example' # str | 
-client_id = 'client_id_example' # str | 
-client_secret = 'client_secret_example' # str | 
-refresh_token = 'refresh_token_example' # str | 
+grant_type = 'grant_type_example' # str | The grant_type - must be \"refresh_token\".
+client_id = 'client_id_example' # str | The client_id assigned to your application.
+client_secret = 'client_secret_example' # str | The client_secret assigned to your application.
+refresh_token = 'refresh_token_example' # str | The refresh token supplied from a previous call to /token or /token/refresh.
 
 try:
     # Refresh Token
@@ -99,10 +100,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **grant_type** | **str**|  | 
- **client_id** | **str**|  | 
- **client_secret** | **str**|  | 
- **refresh_token** | **str**|  | 
+ **grant_type** | **str**| The grant_type - must be \&quot;refresh_token\&quot;. | 
+ **client_id** | **str**| The client_id assigned to your application. | 
+ **client_secret** | **str**| The client_secret assigned to your application. | 
+ **refresh_token** | **str**| The refresh token supplied from a previous call to /token or /token/refresh. | 
 
 ### Return type
 
