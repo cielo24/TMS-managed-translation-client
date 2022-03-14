@@ -1,11 +1,12 @@
 # swagger_client.VendorsApi
 
-All URIs are relative to *https://languagecloud.sdl.com/*
+All URIs are relative to *https://languagecloud.sdl.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**vendors_get_vendor**](VendorsApi.md#vendors_get_vendor) | **GET** /tm4lc/api/v1/vendors/{vendorId} | Get Vendor
 [**vendors_get_vendors**](VendorsApi.md#vendors_get_vendors) | **GET** /tm4lc/api/v1/vendors | Get Vendors
+
 
 # **vendors_get_vendor**
 > PortalVendor vendors_get_vendor(vendor_id)

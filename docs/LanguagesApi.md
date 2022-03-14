@@ -1,10 +1,11 @@
 # swagger_client.LanguagesApi
 
-All URIs are relative to *https://languagecloud.sdl.com/*
+All URIs are relative to *https://languagecloud.sdl.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**languages_get_all_languages**](LanguagesApi.md#languages_get_all_languages) | **GET** /tm4lc/api/v1/languages/list | Get All Languages
+
 
 # **languages_get_all_languages**
 > list[Language] languages_get_all_languages()

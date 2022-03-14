@@ -1,10 +1,11 @@
 # swagger_client.StatisticsApi
 
-All URIs are relative to *https://languagecloud.sdl.com/*
+All URIs are relative to *https://languagecloud.sdl.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**statistics_get_statistics**](StatisticsApi.md#statistics_get_statistics) | **GET** /tm4lc/api/v1/statistics/{duration} | Get Statistics
+
 
 # **statistics_get_statistics**
 > list[PortalDailyStatistic] statistics_get_statistics(duration)

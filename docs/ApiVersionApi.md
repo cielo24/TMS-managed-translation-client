@@ -1,11 +1,12 @@
 # swagger_client.ApiVersionApi
 
-All URIs are relative to *https://languagecloud.sdl.com/*
+All URIs are relative to *https://languagecloud.sdl.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**api_version_get_api_build**](ApiVersionApi.md#api_version_get_api_build) | **GET** /tm4lc/api/apibuild | Get Api Build
 [**api_version_get_api_version**](ApiVersionApi.md#api_version_get_api_version) | **GET** /tm4lc/api/apiversion | Get Api Version
+
 
 # **api_version_get_api_build**
 > dict(str, VersionReport) api_version_get_api_build()

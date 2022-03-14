@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id** | **str** | Gets or sets the identifier. | [optional] 
 **is_read_only** | **bool** | Gets or sets a value indicating whether this  is read only. | [optional] 
 **is_required** | **bool** | Gets or sets a value indicating whether this  is required. | [optional] 
-**language** | [**PortalLanguage**](PortalLanguage.md) |  | [optional] 
+**language** | [**PortalLanguage**](PortalLanguage.md) | Gets or sets the language. | [optional] 
 **maximum_length** | **int** | Gets or sets the maximum length. | [optional] 
 **max_option_length** | **int** | Gets or sets the maximum option length. | [optional] 
 **min_option_length** | **int** | Gets or sets the minimum option length. | [optional] 
@@ -21,4 +21,5 @@ Name | Type | Description | Notes
 **watermark** | **str** | Gets or sets the water mark. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 
